@@ -13,10 +13,10 @@ WORKDIR /usr/src/app
 # Copy the package json file to the workdir
 COPY package.json /usr/src/app/
 # Run the NPM install command to build the application
-RUN npm install
+RUN npm install --legacy-peer-deps
 # Copy the rest of the sources
 COPY . /usr/src/app
 # Build the Angular Application
-RUN ng build 
+RUN export NODE_OPTIONS=--openssl-legacy-provider ng build 
 # Start the application
 CMD [ "node", "app.js" ]
