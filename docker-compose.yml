@@ -6,7 +6,7 @@ services:
       - "3001:3001"
 
   web:
-    image: ghcr.io/grhoads-insight/fabrikam-web:latest
+    image: local-fabrikam-web:latest #ghcr.io/grhoads-insight/fabrikam-web:latest are in instructinos but get "ERROR:UNKNOWN MANIFEST" when use docker-compose up
     depends_on:
         - api
     environment:
