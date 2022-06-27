@@ -7,8 +7,8 @@ services:
 
   web:
     image: ghcr.io/grhoads-insight/fabrikam-web:latest
-    depends on:
-      -api
+    depends_on:
+      - api
     environment:
       CONTENT_API_URL: http://api:3001
     ports:
