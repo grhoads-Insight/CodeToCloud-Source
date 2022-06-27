@@ -4,3 +4,12 @@ services:
     image: ghcr.io/grhoads-insight/fabrikam-api:latest
     ports:
       - "3001:3001"
+
+  web:
+    image: ghcr.io/grhoads-insight/fabrikam-web:latest
+    depends on:
+      -api
+    environment:
+      CONTENT_API_URL: http://api:3001
+    ports:
+      - "3000:80"
