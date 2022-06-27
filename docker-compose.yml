@@ -1,6 +1,6 @@
 version: "3.4"
 services:
   api:
-    image: ghcr.io/grhoads-Insight/fabrikam-api:latest
+    image: ghcr.io/grhoads-insight/fabrikam-api:latest
     ports:
       - "3001:3001"
