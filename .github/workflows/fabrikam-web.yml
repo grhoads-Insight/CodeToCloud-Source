@@ -1,6 +1,7 @@
 name: Fabrikam Web Build
 
 on:
+  workflow_dispatch:
   push:
     # Publish `main` as Docker `latest` image.
     branches:
