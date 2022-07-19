@@ -1,12 +1,12 @@
 version: "3.4"
 services:
   api:
-    image: ghcr.io/grhoads-insight/fabrikam-api:latest
+    image: ghcr.io/grhoads-insight/fabrikam-api:latest 
     ports:
       - "3001:3001"
 
   web:
-    image: ghcr.io/grhoads-insight/fabrikam-web:latest #are in instructions but get "ERROR:UNKNOWN MANIFEST" when use docker-compose up #local-fabrikam-web:latest#
+    image: local-fabrikam-web:latest #ghcr.io/grhoads-insight/fabrikam-web:latest # error:denied when use docker-compose up 
     depends_on:
         - api
     environment:

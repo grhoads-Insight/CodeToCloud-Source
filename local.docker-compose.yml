@@ -12,6 +12,6 @@ services:
     environment:
       MONGODB_CONNECTION: mongodb://mongo:27017/contentdb
 
-  Web:
+  web:
     build: ./content-web
     image: local-fabrikam-web
