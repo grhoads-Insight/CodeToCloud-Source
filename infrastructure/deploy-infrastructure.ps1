@@ -16,8 +16,7 @@ $location2 = "centralus"
 #creating resource group in location1 with given name (does not need to be unique)
 az group create -l $location1 -n $resourcegroupName
 #create a cosmosDB with 2 failover locations with a MongoDB api, backtick used for multi-line command
-az cosmosDB create `
---name $cosmosDBName `
+az cosmosDB create --name $cosmosDBName `
 --resource-group $resourcegroupName `
 --locations regionName =$location1 failoverPriority=0 isZoneRedundant=False `
 --locations regionName =$location2 failoverPriority=0 isZoneRedundant=True `
