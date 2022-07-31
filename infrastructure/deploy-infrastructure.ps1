@@ -19,7 +19,7 @@ az group create -l $location1 -n $resourcegroupName
 az cosmosDB create --name $cosmosDBName `
 --resource-group $resourcegroupName `
 --locations regionName =$location1 failoverPriority=0 isZoneRedundant=False `
---locations regionName =$location2 failoverPriority=0 isZoneRedundant=True `
+--locations regionName =$location2 failoverPriority=1 isZoneRedundant=True `
 --enable-multiple-write-locations=True `
 --kind MongoDB
 #create app service plan to set pricing tier to linux based plan
