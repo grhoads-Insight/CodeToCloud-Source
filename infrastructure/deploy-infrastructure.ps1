@@ -22,3 +22,13 @@ az cosmosDB create --name $cosmosDBName `
 --locations regionName =$location2 failoverPriority=0 isZoneRedundant=True `
 --enable-multiple-write-locations=True `
 --kind MongoDB
+#create app service plan to set pricing tier to linux based plan
+az appservice plan create --name $planName `
+--resource-group $resourcegroupName `
+--sku S1 `
+--is-linux
+#create the Web App with a single NGINX container
+az webapp create --resource-group $resourcegroupName `
+--plan $planName `
+--name $webappName `
+-i NGINX
