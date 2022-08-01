@@ -4,9 +4,9 @@
 $studentprefix = "GDMR"
 #names for resources
 $resourcegroupName = "fabmedical-rg"
-$cosmosDBName = "fabmedical-cdb-"
-$webappName = "fabmedical-web-"
-$planName = "fabmedical-plan-"
+$cosmosDBName = "fabmedical-cdb"
+$webappName = "fabmedical-web"
+$planName = "fabmedical-plan"
 #defining regions (including it's region pair)
 $location1 = "eastus2"
 #easus2 region pair is centralus to ensure highest availability
