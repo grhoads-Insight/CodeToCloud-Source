@@ -18,11 +18,10 @@ az group create -l $location1 -n $resourcegroupName
 #create a cosmosDB with 2 failover locations with a MongoDB api, backtick used for multi-line command
 az cosmosDB create --name $cosmosDBName `
 --resource-group $resourcegroupName `
---kind MongoDB
-#getting CLI error when running locations flag
-#--locations regionName=$location1 failoverPriority=0 isZoneRedundant=False `
-#--locations regionName=$location2 failoverPriority=1 isZoneRedundant=True `
-#--enable-multiple-write-locations=True `
+--kind MongoDB `
+--locations regionName=$location1 failoverPriority=0 isZoneRedundant=False `
+--locations regionName=$location2 failoverPriority=1 isZoneRedundant=True `
+--enable-multiple-write-locations
 #create app service plan to set pricing tier to linux based plan
 az appservice plan create --name $planName `
 --resource-group $resourcegroupName `
