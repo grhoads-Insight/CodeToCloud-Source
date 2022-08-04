@@ -32,3 +32,4 @@ az webapp create --resource-group $resourcegroupName `
 --plan $planName `
 --name $webappName `
 -i NGINX
+
