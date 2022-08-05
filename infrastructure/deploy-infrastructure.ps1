@@ -33,11 +33,12 @@ az webapp create --resource-group $resourcegroupName `
 --name $webappName `
 -i NGINX
 
-az webapp config container set `
---docker-registry-server-password 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 `
---docker-registry-server-url https://ghcr.io `
---docker-registry-server-user notapplicable `
---multicontainer-config-file docker-compose.yml `
---multicontainer-config-type COMPOSE `
---name $webappName `
---resource-group $resourcegroupName 
+#keeping commands in here for reference on setup
+#az webapp config container set `
+#--docker-registry-server-password personal access token `
+#--docker-registry-server-url https://ghcr.io `
+#--docker-registry-server-user notapplicable `
+#--multicontainer-config-file /workspaces/CodeToCloud-Source/docker-compose.yml `
+#--multicontainer-config-type COMPOSE `
+#--name $webappName `
+#--resource-group $resourcegroupName 
