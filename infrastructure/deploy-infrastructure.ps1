@@ -20,8 +20,8 @@ az cosmosDB create --name $cosmosDBName `
 --resource-group $resourcegroupName `
 --kind MongoDB `
 --locations regionName=$location1 failoverPriority=0 isZoneRedundant=False `
---locations regionName=$location2 failoverPriority=1 isZoneRedundant=True `
---enable-multiple-write-locations
+#--locations regionName=$location2 failoverPriority=1 isZoneRedundant=True `
+#--enable-multiple-write-locations
 #create app service plan to set pricing tier to linux based plan
 az appservice plan create --name $planName `
 --resource-group $resourcegroupName `
@@ -33,3 +33,12 @@ az webapp create --resource-group $resourcegroupName `
 --name $webappName `
 -i NGINX
 
+#keeping commands in here for reference on setup
+#az webapp config container set `
+#--docker-registry-server-password personal access token `
+#--docker-registry-server-url https://ghcr.io `
+#--docker-registry-server-user notapplicable `
+#--multicontainer-config-file /workspaces/CodeToCloud-Source/docker-compose.yml `
+#--multicontainer-config-type COMPOSE `
+#--name $webappName `
+#--resource-group $resourcegroupName 
