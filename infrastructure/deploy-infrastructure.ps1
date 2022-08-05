@@ -11,6 +11,8 @@ $planName = "fabmedical-plan"
 $location1 = "eastus2"
 #easus2 region pair is centralus to ensure highest availability
 $location2 = "centralus"
+#app insight name for initializing app insights
+$appInsights = "fabmedical-ai"
 
 # Azure CLI commands
 #creating resource group in location1 with given name (does not need to be unique)
@@ -33,7 +35,12 @@ az webapp create --resource-group $resourcegroupName `
 --name $webappName `
 -i NGINX
 
-#keeping commands in here for reference on setup
+#commands for setting up application insights on azure
+#az extension add --name application-insights
+#$ai = az monitor app-insights component create --app $appInsights --location $location1 --kind web -g $resourcegroupName --application-type web --retention-time 120 | ConvertFrom-Json
+
+
+#keeping commands in here for reference to update the website on azure
 #az webapp config container set `
 #--docker-registry-server-password personal access token `
 #--docker-registry-server-url https://ghcr.io `
