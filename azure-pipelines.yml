@@ -39,3 +39,20 @@ stages:
 
   - stage: DeployProd
     dependsOn: build
+    jobs:
+      - deployment: Infrastructure
+        environment: production
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - checkout: self
+                - task: AzureCLI@2
+                  inputs:
+                    azureSubscription: 'Fabrikam-Azure'
+                    scriptType: 'pscore'
+                    scriptLocation: 'scriptPath'
+                    scriptPath: './infrastructure/deploy-infrastructure.ps1'
+                  env:
+                    CR_PAT: $(CR_PAT)
+                  
