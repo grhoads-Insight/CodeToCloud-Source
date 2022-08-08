@@ -1,7 +1,6 @@
 #declaring usefull variables for infrastructure deployment
 
-#prefix for a unique identifier on resource names
-$studentprefix = "GDMR"
+
 #names for resources
 $resourcegroupName = "fabmedical-rg"
 $cosmosDBName = "fabmedical-cdb"
@@ -57,4 +56,5 @@ az webapp config container set `
 --name $webappName `
 --resource-group $resourcegroupName
 
+az extension add --name application-insights
 az monitor app-insights component create --app $appInsights --location $location1 --kind web -g $resourcegroupName --application-type web --retention-time 120
